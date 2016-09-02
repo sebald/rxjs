@@ -214,6 +214,10 @@ export class WebSocketSubject<T> extends AnonymousSubject<T> {
         socket.close();
         this.socket = null;
       }
+      if (socket && socket.readyState === 3) {
+        this.socket = null;
+        this._output = new Subject<T>();
+      }
     });
     return subscription;
   }

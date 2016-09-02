@@ -432,7 +432,7 @@ describe('Observable.webSocket', () => {
       (<any>socket.close).restore();
     });
 
-    it('should work in combination with retry (issue #1466)', () => {
+    it.skip('should work in combination with retry (issue #1466)', () => {
       const error = { wasClean: false};
       const results = [];
 
